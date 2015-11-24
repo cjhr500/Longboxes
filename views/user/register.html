@@ -1,0 +1,96 @@
+{{extend 'layout.html'}}
+<div class="flex form-page">
+<div class="form-container">
+  <h2>Sign Up</h2>
+  {{if form.errors:}}
+    <span>The form was not submitted due to errors. See below for details:</span>
+  {{pass}}
+    {{=form.custom.begin}}
+    <form class="form-horizontal" method="post">
+
+    <!-- Username -->
+    <div class="form-group">
+      <label for="auth_user_username" class="">Username</label>
+      <div>
+        <input type="text" class="" id="auth_user_username" name="username" placeholder="deauxman">
+        {{if form.errors:}}
+          {{if "username" in form.errors:}}
+          <span class="form-error">Error: {{=form.errors["username"]}}</span>
+          {{pass}}
+        {{pass}}
+      </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group">
+      <label for="auth_user_first_name" class="">First Name</label>
+      <div>
+        <input type="text" class="" id="auth_user_first_name" name="first_name" placeholder="Jean">
+        {{if form.errors:}}
+          {{if "first_name" in form.errors:}}
+          <span class="form-error">Error: {{=form.errors["first_name"]}}</span>
+          {{pass}}
+        {{pass}}
+      </div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group">
+      <label for="auth_user_last_name" class="">Last Name</label>
+      <div>
+        <input type="text" class="" id="auth_user_last_name" name="last_name" placeholder="Deaux">
+        {{if form.errors:}}
+          {{if "last_name" in form.errors:}}
+          <span class="form-error">Error: {{=form.errors["last_name"]}}</span>
+          {{pass}}
+        {{pass}}
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="auth_user_email" class="">Email</label>
+      <div>
+        <input type="text" class="" id="auth_user_email" name="email" placeholder="jean.deaux@email.com">
+        {{if form.errors:}}
+          {{if "email" in form.errors:}}
+          <span class="form-error">Error: {{=form.errors["email"]}}</span>
+          {{pass}}
+        {{pass}}
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="auth_user_password" class="">Password</label>
+      <div>
+        <input type="password" class="" id="auth_user_password" name="password" placeholder="password">
+        {{if form.errors:}}
+          {{if "password" in form.errors:}}
+          <span class="form-error">Error: {{=form.errors["password"]}}</span>
+          {{pass}}
+        {{pass}}
+      </div>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group">
+      <label for="auth_user_password_two" class="">Confirm Password</label>
+      <div>
+        <input type="password" class="" id="auth_user_password_two" name="password_two" placeholder="password">
+        {{if form.errors:}}
+          {{if "password_two" in form.errors:}}
+          <span class="form-error">Error: {{=form.errors["password_two"]}}</span>
+          {{pass}}
+        {{pass}}
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="form-group">
+        <button type="submit" class="">Register and Login</button>
+    </div>
+    {{=form.custom.end}}
+
+</div>
+</div>

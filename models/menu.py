@@ -9,7 +9,7 @@ response.logo = A(B('web',SPAN(2),'py'),XML('&trade;&nbsp;'),
                   _class="navbar-brand",_href="http://www.web2py.com/",
                   _id="web2py-logo")
 response.title = request.application.replace('_',' ').title()
-response.subtitle = ''
+response.subtitle = 'Hello'
 
 ## read more at http://dev.w3.org/html5/markup/meta.name.html
 response.meta.author = 'Your Name <you@example.com>'
@@ -135,4 +135,4 @@ def _():
         ]
 if DEVELOPMENT_MENU: _()
 
-if "auth" in locals(): auth.wikimenu() 
+if "auth" in locals(): auth.wikimenu()

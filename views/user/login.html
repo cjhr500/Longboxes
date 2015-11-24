@@ -1,0 +1,61 @@
+{{extend 'layout.html'}}
+<div class="flex form-page">
+
+
+
+<div class="form-container">
+  <h2>Log In</h2>
+  {{if form.errors:}}
+    <span>The form was not submitted due to errors. See below for details:</span>
+  {{pass}}
+    {{=form.custom.begin}}
+    <form class="form-horizontal" method="post">
+
+    <div class="form-group">
+      <label for="auth_user_username" class="">Username</label>
+      <div>
+        <input type="text" class="" id="auth_user_username" name="username" placeholder="Enter Username">
+        {{if form.errors:}}
+          {{if "username" in form.errors:}}
+          <span class="form-error">Error: {{=form.errors["username"]}}</span>
+          {{pass}}
+        {{pass}}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="auth_user_password" class="">Password</label>
+      <div>
+        <input type="password" class="" id="auth_user_password" name="password" placeholder="Enter password">
+        {{if form.errors:}}
+          {{if "password" in form.errors:}}
+          <span class="form-error">Error: {{=form.errors["password"]}}</span>
+          {{pass}}
+        {{pass}}
+      </div>
+    </div>
+
+    <div class="form-group check-row">
+      <label for = "auth_user_remember_me">
+         Remember me
+      </label>
+      <div><input id="auth_user_remember_me" name="remember_me" type="checkbox" checked></div>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="">Login</button>
+    </div>
+    {{=form.custom.end}}
+
+</div>
+{{if form.errors:}}
+  Your submitted form contains the following errors:
+  <ul>
+  {{for fieldname in form.errors:}}
+    <li>{{=fieldname}} error: {{=form.errors[fieldname]}}</li>
+  {{pass}}
+  </ul>
+  {{form.errors.clear()}}
+{{pass}}
+
+</div>

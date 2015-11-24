@@ -1,10 +1,34 @@
 {{extend 'layout.html'}}
+<div class="flex form-page">
 
-<h2>
-{{=T('Sign Up') if request.args(0) == 'register' else T('Log In') if request.args(0) == 'login' else T(request.args(0).replace('_',' ').title())}}
-</h2>
 
-<div class="container">
+
+<div class="form-container">
+  <h2>
+  {{=T('Sign Up') if request.args(0) == 'register' else T('Log In') if request.args(0) == 'login' else T(request.args(0).replace('_',' ').title())}}
+  </h2>
+  <!-- {{if request.args(0) == 'login':}}
+    {{=form.custom.begin}}
+    <form class="form-horizontal" method="post">
+    <div class="form-group">
+      <label for="auth_user_username" class="">Username</label>
+      <input type="text" class="" id="auth_user_username" name="username" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+      <label for="auth_user_password" class="">Password</label>
+      <input type="password" class="" id="auth_user_password" name="password" placeholder="Enter password">
+    </div>
+    <div class="form-group">
+      <label for = "auth_user_remember_me">
+         Remember me
+      </label>
+      <input id="auth_user_remember_me" name="remember_me" type="checkbox">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="">Login</button>
+    </div>
+    {{=form.custom.end}}
+  {{pass}} -->
     <div class="row">
         <div id="web2py_user_form" class="col-lg-6">
         {{
@@ -22,6 +46,7 @@
     </div>
 </div>
 
+</div>
 
 {{block page_js}}
 <script>
